@@ -13,6 +13,8 @@ namespace CyclopsSpeedUpgrades.Utils
          */
         public static BaseCyclopsSpeedModule GetInstalled(UpgradeConsole upgradeConsole)
         {
+            if(!upgradeConsole) return null;
+            
             var installedSpeedModules =
                 upgradeConsole.modules.equipment.Values
                               .Where(m => m != null && m.item != null)
